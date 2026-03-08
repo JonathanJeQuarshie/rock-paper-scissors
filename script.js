@@ -33,4 +33,21 @@ function playRound(humanChoice, computerChoice) {
     return "You lose! " + computerChoice + " beats " + humanChoice;
   }
 }
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+    console.log(playRound(humanChoice, computerChoice));
+  }
+  if (humanScore > computerScore) {
+    console.log("Congratulations! You won the game!");
+  }
+  if (computerScore > humanScore) {
+    console.log("Sorry! You lost the game!");
+  }
+  if (humanScore === computerScore) {
+    console.log("It's a tie game!");
+  }
+}
+playGame();
  
