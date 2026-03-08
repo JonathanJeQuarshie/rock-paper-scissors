@@ -16,3 +16,21 @@ function getHumanChoice() {
   let humanChoice = prompt("rock, paper, scissors");
   return humanChoice;
 }
+function playRound(humanChoice, computerChoice) {
+  humanChoice = humanChoice.toLowerCase();
+  if (humanChoice === computerChoice) {
+    return "It's a tie!";
+  }
+  if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "scissors" && computerChoice === "paper")
+  ) {
+    humanScore++;
+    return "You win! " + humanChoice + " beats " + computerChoice;
+  } else {
+    computerScore++;
+    return "You lose! " + computerChoice + " beats " + humanChoice;
+  }
+}
+ 
