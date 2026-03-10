@@ -2,15 +2,12 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-  let choices = Math.floor(Math.random() * 3);
-  if (choices === 0) {
-    return "rock";
-  } else if (choices === 1) {
-    return "paper";
-  } else if (choices === 2) {
-    return "scissors";
-  }
+  const choices = ["rock", "paper", "scissors"];
+  return choices[Math.floor(Math.random() * choices.length)];
 }
+    return "scissors";
+  
+
 
 function getHumanChoice() {
   let humanChoice = prompt("rock, paper, scissors");
@@ -39,6 +36,8 @@ function playGame() {
     let computerChoice = getComputerChoice();
     console.log(playRound(humanChoice, computerChoice));
   }
+  console.log(`Final score — You: ${humanScore} | Computer: ${computerScore}`);
+
   if (humanScore > computerScore) {
     console.log("Congratulations! You won the game!");
   }
